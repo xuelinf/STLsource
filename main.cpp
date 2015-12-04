@@ -10,9 +10,11 @@ using namespace std;
 
 int main(){
     vector<int> ia= {0,1,2,3,4};
+
+    // cout << ia <<endl;
     unsigned int i;
 
-    vector<int, XLF::allocator<int> > iv{1,2,3,4,5};
+    vector<int, XLF::allocater<int> > iv{1,2,3,4,5};
 
 
     for (i = 0; i < iv.size(); i++){

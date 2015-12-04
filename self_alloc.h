@@ -6,7 +6,7 @@
 #define STLSOURCE_SELF_ALLOC_H
 
 #include <new>
-#include <cstddef>  // use ptrdiff_t and size_t
+#include <cstddef>
 #include <cstdlib>
 #include <climits>
 #include <iostream>
@@ -15,10 +15,10 @@ namespace XLF
 {
     template <class T>
     inline T* _allocate(ptrdiff_t size, T*){
-        set_new_handler(0);
+        // set_new_handler(0);
         T *tmp = (T*)(::operator new((size_t)(size * sizeof(T))));
         if (tmp == 0){
-            cer << "out of memory" <<endl;
+            std::cerr << "out of memory";
             exit(1);
         }
         return tmp;
